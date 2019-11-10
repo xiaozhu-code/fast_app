@@ -1,3 +1,4 @@
+import widgetState from "./state/widgetState"
 export default{
   pages:[
     {
@@ -5,5 +6,6 @@ export default{
       widgets:[],
     }
   ],
+  widgetState,
   pageIndex:0
 }

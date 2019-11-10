@@ -14,7 +14,7 @@
           <div class="phone">
             <div class="operationView" id="operationView">
               <van-nav-bar
-                title="标题"
+                :title="widgetState.pages.pageName"
                 left-text="返回"
                 left-arrow
               />
@@ -34,7 +34,15 @@
             </div>
           </div>
       </div>
-    <propertyPanne/>
+
+
+      <!-- 右侧属性栏 -->
+    <div class="propertyPanne">
+      <div class="title">{{attribute.title}}</div>
+      <div class="main">
+         <component :is="attribute.attribute" :values="widgetState['pages']" ></component>
+      </div>
+    </div>
      
 
     </div>
@@ -42,9 +50,10 @@
 </template>
 <script>
   import componentLib from "@/components/componentLib.vue"
-  import propertyPanne from "@/components/propertyPanne"
+  import pPage from "@/components/property/p-page.vue"
   import draggable from "vuedraggable"
   import widgets from "@/widgets/widgets.js"
+  import attribute from "@/attribute.js"
   import { Button } from 'vant'
   import {mapActions,mapState} from "vuex"
   export default {
@@ -52,17 +61,18 @@
        ...widgets,
       componentLib,
       draggable,
-      propertyPanne
+      pPage
     },
     data(){
      return{
        isDragging:false,
         receive:false,
         widgets:[],
+        attribute:attribute.page,
      }
     },
     computed:{
-      ...mapState(['pages','pageIndex']),
+      ...mapState(['pages','pageIndex','widgetState']),
       dragOptions2(){
           return {
               animation: 0,
@@ -150,4 +160,19 @@
            }
        }
    }
+
+
+   .propertyPanne{
+    width: 300px;
+    border: solid 1px #3333;
+    height:100%;
+    padding: 10px;
+    .title{
+      padding-left: 20px;
+      border-left: solid 5px blue;
+    }
+    .main{
+      margin-top: 20px;
+    }
+   } 
 </style>

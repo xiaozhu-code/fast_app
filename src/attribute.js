@@ -1,47 +1,6 @@
 export default{
   "page":{
     'title':'页面设置',
-    'attribute':[
-      [
-        {
-          'title':'页面名称',
-          'widget':'p-Input',
-          'value':'onex小程序-商城',
-          'message':'页面名称仅用于后台查找'
-        },
-      ],
-      [
-        {
-          'title':'页面标题',
-          'widget':'p-Input',
-          'value':'onex小程序-商城',
-          'message':'小程序端顶部显示的标题'
-        },
-      ],
-      [
-        {
-          'title':'分享标题',
-          'widget':'p-Input',
-          'value':'onex小程序-商城',
-          'message':'小程序端转发时显示的标题'
-        },
-      ],
-      [
-        {
-          'title':'标题栏文字',
-          'widget':'p-radiobox',
-          'value':'onex小程序-商城',
-          'message':'none'
-        },
-      ],
-      [
-        {
-          'title':'标题栏背景',
-          'widget':'p-color-pick',
-          'value':'onex小程序-商城',
-          'message':'none'
-        },
-      ]
-    ]
+    'attribute':'pPage'
   }
 }
